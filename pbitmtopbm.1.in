@@ -1,0 +1,82 @@
+.\" @(#)$Mu: pbitmtopbm/pbitmtopbm.1.in 1.1 1998/12/18 19:53:24 $
+.\"
+.\" pbitmtopbm.man
+.\"	Man page for pbitmtopbm.
+.\"
+.\" Copyright (C) 1997 Eric A. Howe
+.\"
+.\" This program is free software; you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation; either version 2 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.\"
+.\"   Authors:  Eric A. Howe (mu@trends.net)
+.\"
+.TH PBITMTOPBM 1 "Sept 1997"
+.\"----------------------------------------------------------------------------
+.SH NAME
+pbitmtopbm \- prc-tools Pilot bitmap to Portable Bitmap converter, version @VERSION@.
+.\"----------------------------------------------------------------------------
+.SH SYNOPSIS
+.B pbitmtobpm
+.RI [ -h ]
+.RI [ -v ]
+.RI [ "-t|-b" ]
+.RI [ in " [" out ]]
+.\"----------------------------------------------------------------------------
+.SH DESCRIPTION
+\fBpbitmtopbm\fR is a simple filter for converting \fBpbitm\fR bitmap files
+to \fBPBM\fR files; the \fRpbitm\fR format is used by the Palm Pilot
+\fBprc-tools\fR for bitmap resources.  The \fBpbitm\fR files are monochrome,
+if you want to deal with deeper images you should try \fBTbmptoppm\fR(1)
+and \fBppmtoTbmp\fR(1).
+.PP
+Input bitmaps are limited to 163 columns (this is a limitation of the
+\fBtxt2bitm\fR(1) tool).  All columns of the input bitmap must be filled
+and all the columns must be the same size (this limit is not present in
+\fBtxt2bitm\fR(1) but it makes it much easier for \fBpbitmtopbm\fR to
+behave itself in a pipeline).
+.PP
+The \fBpbitm\fR format is outlined in the \fBprc-tools\fR documentation.
+.\"----------------------------------------------------------------------------
+.SH OPTIONS
+.TP
+.I -h
+Display a short usage message and exit.
+.TP
+.I -v
+Display the version and exit.
+.TP
+.I -t
+Produce a text (or plain) format PBM file.
+.TP
+.I -b
+Produce a raw (or binary) format PBM file.
+.TP
+.I in
+The input file.  The standard input is read by default.
+.TP
+.I out
+The output file.  The standard output is written by default.
+.\"----------------------------------------------------------------------------
+.SH "SEE ALSO"
+.BR pbmtopbitm (1),
+.BR Tbmptoppm (1),
+.BR ppmtoTbmp (1),
+.BR txt2bitm (1),
+.BR pbm (5).
+.\"----------------------------------------------------------------------------
+.SH BUGS
+Bug reports should be sent to Eric A. Howe (mu@trends.net).
+.\"----------------------------------------------------------------------------
+.SH AUTHORS
+Eric A. Howe <http://www.trends.net/~mu>.

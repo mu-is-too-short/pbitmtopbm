@@ -1,0 +1,3 @@
+Version 1.4, 1998.12.18:
+	- hacked up to use automake/autoconf
+	- various minor reorganizations for autoconf

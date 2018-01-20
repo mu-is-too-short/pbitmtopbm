@@ -1,0 +1,82 @@
+.\" @(#)$Mu: pbitmtopbm/pbmtopbitm.1.in 1.1 1998/12/18 19:53:24 $
+.\"
+.\" pbmtopbitm.man
+.\"	Man page for pbmtopbitm.
+.\"
+.\" Copyright (C) 1997 Eric A. Howe
+.\"
+.\" This program is free software; you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation; either version 2 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.\"
+.\"   Authors:  Eric A. Howe (mu@trends.net)
+.\"
+.TH PBMTOPBITM 1 "Sept 1997"
+.\"----------------------------------------------------------------------------
+.SH NAME
+pbmtopbitm \- Portable Bitmap to prc-tools Pilot bitmap converter, version @VERSION@.
+.\"----------------------------------------------------------------------------
+.SH SYNOPSIS
+.B pbmtopbitm
+.RI [ -h ]
+.RI [ -v ]
+.RI [ "-o c" ]
+.RI [ "-z c" ]
+.RI [ in " [" out ]]
+.\"----------------------------------------------------------------------------
+.SH DESCRIPTION
+\fBpbmtopbitm\fR is a simple filter for converting \fBPBM\fR bitmap files
+to \fBpbitm\fR files; the \fRpbitm\fR format is used by the Palm Pilot
+\fBprc-tools\fR for bitmap resources.  The \fBpbitm\fR files are monochrome,
+if you want to deal with deeper images you should try \fBTbmptoppm\fR(1)
+and \fBppmtoTbmp\fR(1).
+.PP
+Input bitmaps are limited to 163 columns (this is a limitation of the
+\fBtxt2bitm\fR(1) tool).
+.PP
+The \fBpbitm\fR format is outlined in the \fBprc-tools\fR documentation.
+.\"----------------------------------------------------------------------------
+.SH OPTIONS
+.TP
+.I -h
+Display a short summary of the command line options and exit.
+.TP
+.I -v
+Display the version and exit.
+.TP
+.I -o c
+Use \fIc\fR as the on (one) character in the pbitm output.  This character
+can be anything but a space or hyphen.
+.TP
+.I -o z
+Use \fIc\fR as the off (zero) character in the pbitm output.  This character
+can be either a space or a hyphen.
+.TP
+.I in
+The input file.  The default is the standard input.
+.TP
+.I out
+The output file.  The default is the standard output.
+.\"----------------------------------------------------------------------------
+.SH "SEE ALSO"
+.BR pbitmtopbm (1),
+.BR Tbmptoppm (1),
+.BR ppmtoTbmp (1),
+.BR txt2bitm (1),
+.BR pbm (5).
+.\"----------------------------------------------------------------------------
+.SH BUGS
+Bug reports should be sent to Eric A. Howe (mu@trends.net).
+.\"----------------------------------------------------------------------------
+.SH AUTHORS
+Eric A. Howe <http://www.trends.net/~mu>.
